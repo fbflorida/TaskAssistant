@@ -1,0 +1,103 @@
+@TaskAssistantAPI_HostAddress = https://localhost:7234
+
+
+POST {{TaskAssistantAPI_HostAddress}}/identity/register
+Content-Type: application/json
+
+{
+    "email":"demo_user2@gmail.com",
+    "password":"pass@Word1"
+}
+
+###
+
+POST {{TaskAssistantAPI_HostAddress}}/api/applicationuser/register
+Content-Type: application/json
+
+{
+    "firstname": "John",
+    "lastname": "Doe",
+    "username": "demo1@gmail.com",
+    "email":"demo1@gmail.com",
+    "password":"Admin$123"
+}
+
+###
+
+POST {{TaskAssistantAPI_HostAddress}}/identity/login
+Content-Type: application/json
+
+{
+    "email":"demo_user1@gmail.com",
+    "password":"pass@Word1"
+}
+
+###
+
+@AccessToken = CfDJ8A1kJcGy6EtHqbnMLbjvYiJkkpHNz5RbnKM-Fnlx6GBEYX6T_pvWGnR0v8lV8Wn4Kg84LpmLTEs6qgQsnzrRNN-WhgDRYoVGGloOtikZum8O-Jf-bzpHEX0jyJ-__mxQvZphdQr0hLYbTNgdheWs5QUx9luc3YwqUu4axYhnxwwIu93JpZZQNLHRGH7hRT0xfXR_0TsKbNsh5wLj0KqaGVP1cvZERionJVaoJBO5MWbu8J9qsv10tt153AmZODjkYZSgdKgJ0rG2xeD-Pf7OmyS_7Oz38vWt31JRTd19FVBEpdJWOG-jRhUzzW6_hbd8sqHVZssart2KA3s_Djjmn4UnETHEA3whqePtNh41do75rKk8enWLwKR_1s7uJQJP_I8GdWYQazZcBWnJMDCbJD-3F_Te8HNJgUPY8A0IzhBdQotck7er7i8Oe_g5h0FnSPRB2osqqYlTXTonQUguac_iOCeWGG26-GOwzRI3xl50pHr7gBHeTuxLbjdcGui9_KRmfnrc8MyUPL7aylApSq7Z3lxkf4AQkE5nExPg45gYoiUpiU_4fMH4AeA_UfxIhlmRYoM7zqMwI9kETcFox10tQIVN5Bockrn-zDangLV-t9FN8uq_-XDrX_lFotOW8_WsYBBumF3eBC3O_oat2QxXlLyeoX6jot9Hwb_H44u0rSsj2T_Z1sozI4Q4LMo2b0jsuV2NpP0iaG6kBz6QrX4
+
+
+POST {{TaskAssistantAPI_HostAddress}}/api/applicationuser/logout
+Accept: application/json
+Authorization: Bearer {{AccessToken}}
+
+{
+    "email":"demo_user1@gmail.com",
+    "password":"pass@Word1"
+}
+
+###
+
+
+GET {{TaskAssistantAPI_HostAddress}}/api/applicationuser/profile/
+Accept: application/json
+Authorization: Bearer {{AccessToken}}
+
+###
+
+GET {{TaskAssistantAPI_HostAddress}}/api/task/
+Accept: application/json
+
+###
+
+GET {{TaskAssistantAPI_HostAddress}}/api/task/11
+Accept: application/json
+
+###
+
+POST {{TaskAssistantAPI_HostAddress}}/api/task/
+Content-Type: application/json
+Authorization: Bearer {{AccessToken}}
+
+{
+  "Title": "Task 1",
+  "Description": "Test task",
+  "DueDate": "2026-10-09",
+  "Priority": 1,
+  "Category": "Work",
+  "Status": "To Do"
+}
+
+###
+
+GET {{TaskAssistantAPI_HostAddress}}/api/task/usertasks
+Accept: application/json
+Authorization: Bearer {{AccessToken}}
+
+###
+
+PUT {{TaskAssistantAPI_HostAddress}}/api/task/4
+Content-Type: application/json
+Authorization: Bearer {{AccessToken}}
+
+{
+  "title":"test updated",
+  "description":"test",
+  "dueDate":"2026-01-24",
+  "priority":3,
+  "category":"sets",
+  "status":"In Progress"
+}
+
+###
+
