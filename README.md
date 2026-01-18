@@ -36,8 +36,8 @@ The Task Table has the following fields:
 * ApplicationUserId (FK)
 
 ## Limitations/Further Enhancements
-* AI Feature for summarizing tasks is not implemented
-* Error Messages Handling - for the API integrations, in case of errors, there is no ui display to user and also logging
+* AI Feature for summarizing tasks is not implemented due to time comstraints for this project
+* Error Messages Handling - for the API integrations, in case of errors, there is no ui display to user and also no logging
 * Admin page for managing users
 * Additional login/registration options using OAuth/SSO
 
