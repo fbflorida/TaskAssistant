@@ -1,5 +1,6 @@
 # TaskAssistant
 A Task Management system built using Angular and C#.Net Core
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/2c39f597-5635-4536-b707-7d254d3f1580" />
 
 ## TaskAssistantWeb 
 A web application built using Angular v20.3.0
@@ -7,6 +8,7 @@ A web application built using Angular v20.3.0
 Authentication - authentication is handled via a backend REST API.<br>
 HttpInterceptor - a feature that handles all outgoing HttpRequest to make sure it always send Bearer Token header <br>
 AuthGuard - prevents other parts of the application to be accessed if not Authenticated
+AI Integration - there is an integration with GeminiAI API to perform Task Summarization and Task Extraction from raw text.
 
 ## TaskAssistantAPI
 A C# .Net Core WebApi project that exposes API for the User Management and Task management (CRUD Operations)
@@ -36,7 +38,6 @@ The Task Table has the following fields:
 * ApplicationUserId (FK)
 
 ## Limitations/Further Enhancements
-* AI Feature for summarizing tasks is not implemented due to time comstraints for this project
 * Error Messages Handling - for the API integrations, in case of errors, there is no ui display to user and also no logging
 * Admin page for managing users
 * Additional login/registration options using OAuth/SSO
